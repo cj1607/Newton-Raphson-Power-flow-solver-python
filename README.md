@@ -1,6 +1,6 @@
 # Power Flow Solver
 
-[![Build Status](https://travis-ci.org/ee454-team-25/power-flow-solver.svg?branch=master)](https://travis-ci.org/ee454-team-25/power-flow-solver)
+[![Build Status]
 
 ## Overview
 
@@ -92,3 +92,68 @@ Some sample inputs are provided in the "data" subdirectory. The reference case f
 | 8 | 9 | 0.08205 | 0.19207 | 0 | |
 | 10 | 11 | 0.22092 | 0.19988 | 0 | |
 | 11 | 12 | 0.17093 | 0.34802 | 0 | |
+
+# Newton Raphson Power Flow Solver using Python
+
+This repository contains a Python implementation of Newton Raphson Power Flow Solver. The solver is designed to calculate the power flow through power systems with non-linear loads. The Newton Raphson method is a commonly used technique for solving non-linear problems, and it is particularly well-suited for power system analysis.
+
+The solver considers the following inputs to be provided by the user:
+- A network model with bus information, branch information, generator information, and load information.
+- The base power and voltage of the system.
+
+Once these inputs are provided, the solver calculates the power flow through the system and the voltages at all buses.
+
+## Getting Started
+
+To get started with the Newton Raphson Power Flow Solver, follow these steps:
+
+1. Clone the repository to your local machine.
+2. Open the terminal and navigate to the directory where the repository is saved.
+3. Run the following command to install the required Python packages:
+
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. Run the solver using the following command:
+
+   ```
+   python main.py
+   ```
+
+5. The solver will prompt you to provide the network model and base power and voltage information.
+
+## Inputs
+
+The solver requires the following inputs to be provided by the user:
+
+1. Network Model: The network model should contain the following information:
+   - Bus Information: The bus information should include the bus number, type, voltage magnitude and angle.
+   - Branch Information: The branch information should include the from bus, to bus, and the impedance.
+   - Generator Information: The generator information should include the bus number, type, and the generated power.
+   - Load Information: The load information should include the bus number, type, and the demand.
+
+2. Base Power and Voltage: The base power and voltage values are used to convert the system to a per-unit system. The user is required to provide the base power and voltage values for the system.
+
+## Outputs
+
+The solver produces the following outputs:
+1. Power Flow Results: The power flow results include the complex power, real power, and reactive power at each bus and branch.
+2. Voltage Results: The voltage results include the voltage magnitude and angle at each bus.
+
+## Code Structure
+
+The code is structured as follows:
+
+1. `main.py`: This is the main Python file that runs the solver.
+2. `newton_raphson.py`: This file contains the implementation of the Newton Raphson algorithm.
+3. `network.py`: This file contains the classes for bus, branch, generator, and load objects.
+4. `utils.py`: This file contains utility functions used by the solver.
+5. `README.md`: This file contains the instructions and information about the repository.
+
+## Contributor
+
+- If you'd like to contribute to this project, please make a fork, alter as desired/required, and submit a pull request with your changes.
+
+## License
+Open Source
